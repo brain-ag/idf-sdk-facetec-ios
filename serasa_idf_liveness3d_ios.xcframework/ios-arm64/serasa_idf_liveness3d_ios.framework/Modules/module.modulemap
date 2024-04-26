@@ -1,0 +1,11 @@
+framework module serasa_idf_liveness3d_ios {
+  umbrella header "serasa_idf_liveness3d_ios.h"
+
+  export *
+  module * { export * }
+}
+
+module serasa_idf_liveness3d_ios.Swift {
+  header "serasa_idf_liveness3d_ios-Swift.h"
+  requires objc
+}
