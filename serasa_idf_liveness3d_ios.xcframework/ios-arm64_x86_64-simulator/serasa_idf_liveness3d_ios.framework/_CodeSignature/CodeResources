@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/serasa_idf_liveness3d_ios-Swift.h</key>
 		<data>
-		j77Ra1vJysntLxL/Jk7HPmC4pfI=
+		ROUp9rhm2T1aIOM+NO4kT8oQqVc=
 		</data>
 		<key>Headers/serasa_idf_liveness3d_ios.h</key>
 		<data>
@@ -14,51 +14,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7sXMqT6uQwAvtYrYXsY22/juKv0=
+		75JCHqPPOqwuuhZoPPs35JzOc5I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		9ISvdPj2ZaNTxo/ze4xM4nhipqc=
+		0yhUODh/+MDniwyEjtWZQp2VCNg=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		7tCVpPqHAaN7KXmvlEgdzViDitY=
+		GkPdtFe3LgzLi/bDRA9Lzs4z4E4=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		GjKT5D7DXORdbsO6Fj3TSdVErE4=
+		vetIzrCeKicHn4WR7x1YbUQ/d9M=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		HC3oOeFF6hSsEcUEuqkJ50Aw9Kg=
+		QzitNo0s9yKYSjUf2hqhPxso/Kc=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		GjKT5D7DXORdbsO6Fj3TSdVErE4=
+		vetIzrCeKicHn4WR7x1YbUQ/d9M=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		HM76ESr31jCK0MYBqQ9XtSw1pUs=
+		6WyH2WB13a/jAe48Ox/jBsfyGKQ=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		7tCVpPqHAaN7KXmvlEgdzViDitY=
+		GkPdtFe3LgzLi/bDRA9Lzs4z4E4=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		BPy95vCoFnGERmgUcTkj0b1GL90=
+		RggPa1pP8bmxJLbkEiF0DSAUJx8=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		wSpNgopJGw8ewN0ueLQYVtE915Y=
+		WLY7Sz50G2c53PYHXeI67SLplEw=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		BPy95vCoFnGERmgUcTkj0b1GL90=
+		RggPa1pP8bmxJLbkEiF0DSAUJx8=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4st8XKXDKIfwPG5evw61TyhAlHk=
+		dpZ1RcruW+XeCrRWJVsSYcizazo=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			otP9JwdTo8D1i8E+sDOmYFglpwIo6dTXJX5TEKIvq3Q=
+			qwhJFdF3Ybr5rkMMQ+Cp7y4+IGs7joRSaGihhZ4laeQ=
 			</data>
 		</dict>
 		<key>Headers/serasa_idf_liveness3d_ios.h</key>
@@ -81,77 +81,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M/nlGscpxvAtuhsjq3D1TdyayYGVsIpTepS9cRYGCuo=
+			b+dMJP7Ca6pT7/CKhR8xnkPnm115KdHjmMU+RRtuVB4=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gegvify+WBjc1oTDNTEbWxxIO502jKdO5Oeu/m3hTq8=
+			tTGRJ0whQwaP99Q5ckIU4wmcOJ7VcCV4XIQJdrEDAvU=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AvdUfTRjGbChYnD0uCMVtRc5gXvDig1+Nr1LZosLnOc=
+			u6SMzpYRuqqhThfVP18UyzZJ7UPgE0rL+WgvbC8XzdA=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Uvh+ri75D1ZdoxUIWEIV/TY2bbUvMxShJPL/W7tCUE=
+			QDzZcBvjM8tzm/3jK98imY0jPaI9yiWxM++ne5gKShQ=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AvdUfTRjGbChYnD0uCMVtRc5gXvDig1+Nr1LZosLnOc=
+			u6SMzpYRuqqhThfVP18UyzZJ7UPgE0rL+WgvbC8XzdA=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mqoLWsDkWFvSejTKNWctk4fXk3RSoEs480/zS2MGmUk=
+			Re2U2mS+UXq4AyvDuoXVs1sXZ+An0vr4N+2ltkrR3T8=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gegvify+WBjc1oTDNTEbWxxIO502jKdO5Oeu/m3hTq8=
+			tTGRJ0whQwaP99Q5ckIU4wmcOJ7VcCV4XIQJdrEDAvU=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xtvwJeEauX8cDnUno4uaJfyCgc9oxxJBa75qtGRgwxI=
+			r5iFfxXJl3Xt1G/BDhHgEWLxvmhO8NMFeJ3m5wgt+2E=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2CfL99BWPnnxqnqQd/oYivNKIv2531DswuJF8F+lw90=
+			0v3C5Z3W4qI/wKcIEWu/mTWLHZFJTU26MLgPG698dFo=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xtvwJeEauX8cDnUno4uaJfyCgc9oxxJBa75qtGRgwxI=
+			r5iFfxXJl3Xt1G/BDhHgEWLxvmhO8NMFeJ3m5wgt+2E=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6a6OFu2rce3wszagZTnpIEbwi6aCEltaaK6cs5quSKs=
+			TKbisw3Snywcey/uLcMYrGtKarCqXranl3ZKLGqc81M=
 			</data>
 		</dict>
 	</dict>

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = "serasa-idf-liveness3d-ios"
-    s.version           = "3.0.0"
+    s.version           = "3.0.1"
     s.summary           = "Soluções de biometria facial utilizando componente FaceTec"
     s.homepage          = "https://github.com/brscan/serasa-idf-liveness3d-ios"
 
