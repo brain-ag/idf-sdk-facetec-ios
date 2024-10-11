@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		75JCHqPPOqwuuhZoPPs35JzOc5I=
+		w8Cle5L/DC/4hqF1AB7r8VCFXXc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		GkPdtFe3LgzLi/bDRA9Lzs4z4E4=
+		ud5+Gbbtirdgy+GzT95cpcOG9qc=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6WyH2WB13a/jAe48Ox/jBsfyGKQ=
+		gLF/NoaEf87IxV0tR+W3/bdG8YQ=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		GkPdtFe3LgzLi/bDRA9Lzs4z4E4=
+		ud5+Gbbtirdgy+GzT95cpcOG9qc=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dpZ1RcruW+XeCrRWJVsSYcizazo=
+		FUCmeBPf9y1JGtMGh4z8CvjgWVM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -88,7 +88,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tTGRJ0whQwaP99Q5ckIU4wmcOJ7VcCV4XIQJdrEDAvU=
+			3u99mh6203ayNRJPig4A326SOQTuRJuQfPyVPyyw/UY=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -116,14 +116,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Re2U2mS+UXq4AyvDuoXVs1sXZ+An0vr4N+2ltkrR3T8=
+			VMMReeYwfQ92uE/HR/A01hlWTBVqB9DR+Vtau+DeV44=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tTGRJ0whQwaP99Q5ckIU4wmcOJ7VcCV4XIQJdrEDAvU=
+			3u99mh6203ayNRJPig4A326SOQTuRJuQfPyVPyyw/UY=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -151,7 +151,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TKbisw3Snywcey/uLcMYrGtKarCqXranl3ZKLGqc81M=
+			FCsijQael2YtkEsEB0qkMWh+bXuDoBYpK69N9E5+fHU=
 			</data>
 		</dict>
 	</dict>
