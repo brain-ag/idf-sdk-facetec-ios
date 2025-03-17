@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name serasa_idf_liveness3d_ios
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name serasa_idf_liveness3d_ios
 import AVFoundation
 import CoreLocation
 import FaceTecSDK
@@ -14,100 +13,193 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_exported import serasa_idf_liveness3d_ios
-extension UIKit.UIColor {
-  public var primary: UIKit.UIColor {
-    get
+@objc public protocol CapturaSViewControllerDelegate {
+  @objc func sucessoDelegate(_ selfie: [Swift.String : Any])
+  @objc func erroDelegate(_ erro: [Swift.String : Any])
+  @objc func callbackProcessamentoFacetec(_ notificationFacetec: [Swift.String : Any])
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CapturaSViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var delegate: (any serasa_idf_liveness3d_ios.CapturaSViewControllerDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) required public init(chave: Swift.String, wizard: Swift.Bool, segurancaExtraRootCheck: Swift.Bool = false, segurancaExtraEmulatorCheck: Swift.Bool = false, tentativasDeCaptura: Swift.Int = 0, telaConfirmacaoDeSaida: Swift.Bool = true, utilizarCameraTraseira: Swift.Bool = false, retornarErros: Swift.Bool = false, telaSucesso: Swift.Bool = true, processType: Swift.String = "liveness", externalDatabaseRefID: Swift.String = "", segurancaExtraSslPinning: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+extension serasa_idf_liveness3d_ios.CapturaSViewController : serasa_idf_liveness3d_ios.CapturarSelfieViewControllerDelegate {
+  @_Concurrency.MainActor(unsafe) public func sucesso(_ selfie: serasa_idf_liveness3d_ios.Selfie)
+  @_Concurrency.MainActor(unsafe) public func erro(_ erro: serasa_idf_liveness3d_ios.Erro, _ id: Swift.String)
+}
+public protocol CapturarSelfieViewControllerDelegate {
+  func erro(_ erro: serasa_idf_liveness3d_ios.Erro, _ id: Swift.String)
+  func sucesso(_ selfie: serasa_idf_liveness3d_ios.Selfie)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CapturarSelfieViewController : UIKit.UIViewController, Foundation.URLSessionDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
   }
-  public var brscan_selfie_feedback_custom_text_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_primary_button_background_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_primary_button_text_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_progress_tint_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_result_custom_result_animation_foreground_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_result_custom_result_animation_background_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_feedback_custom_background_colors: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_oval_custom_stroke_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_loading_title_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_loading_subtitle_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_ready_screen_header_text_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_ready_screen_subtext_text_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_foreground_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_retry_screen_header_text_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_retry_screen_subtext_text_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_result_custom_foreground_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_btn_text_normal_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_btn_text_disabled_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_guidance_custom_btn_text_highlight_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_close_button_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_loading_progress_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_loading_background_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_capture_instruction_title_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_success_title_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_capture_instruction_text_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_success_check_icon_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_exit_confirmation_title_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_exit_confirmation_subtitle_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_error_title_color: UIKit.UIColor {
-    get
-  }
-  public var brscan_selfie_error_subtitle_color: UIKit.UIColor {
-    get
-  }
+  @_Concurrency.MainActor(unsafe) public var delegate: (any serasa_idf_liveness3d_ios.CapturarSelfieViewControllerDelegate)?
+  @_Concurrency.MainActor(unsafe) required public init(chave: Swift.String, wizard: Swift.Bool = false, segurancaExtraSslPinning: Swift.Bool, tipoRetorno: Swift.String = "base64", tokenTentativa: Swift.Int, retornarErros: Swift.Bool, tentativasDeCaptura: Swift.Int, telaConfirmacaoDeSaida: Swift.Bool, utilizarCameraTraseira: Swift.Bool, telaSucesso: Swift.Bool, processType: Swift.String, externalDatabaseRefID: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func increment()
+  @_Concurrency.MainActor(unsafe) public func attemptExceeded() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func sucessoLiveness(_ selfie: serasa_idf_liveness3d_ios.Selfie)
+  @objc deinit
+}
+extension serasa_idf_liveness3d_ios.CapturarSelfieViewController : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+}
+@_inheritsConvenienceInitializers @objc public class ConfiguracaoTextoSelfie : ObjectiveC.NSObject, Swift.Codable {
+  public var brscan_selfie_error_connection_subtitle: Swift.String
+  public var brscan_selfie_erro_ao_validar_chave: Swift.String
+  public var brscan_selfie_erro_device_rooted: Swift.String
+  public var brscan_selfie_erro_usuario_cancelou_acao: Swift.String
+  public var brscan_selfie_erro_liberar_camera: Swift.String
+  public var brscan_selfie_error_connection_failed_subtitle: Swift.String
+  public var brscan_selfie_error_proccess_not_completed_subtitle: Swift.String
+  public var brscan_selfie_error_token_expired_subtitle: Swift.String
+  public var brscan_selfie_erro_acesso_negado_title: Swift.String
+  public var brscan_selfie_error_enable_camera_subtitle: Swift.String
+  public var brscan_selfie_erro_acesso_negado_botao_de_acao: Swift.String
+  public var brscan_selfie_erro_captura_title: Swift.String
+  public var brscan_selfie_erro_captura_subtitle: Swift.String
+  public var brscan_selfie_error_button_try_again: Swift.String
+  public var brscan_selfie_erro_captura_botao_sair_do_processo: Swift.String
+  public var brscan_selfie_loading_title: Swift.String
+  public var brscan_selfie_loading_subtitle_before_capture: Swift.String
+  public var brscan_selfie_loading_subtitle_after_capture: Swift.String
+  public var brscan_selfie_erro_device_emulated: Swift.String
+  public var brscan_selfie_erro_tentativas_permitidas: Swift.String
+  public var brscan_facetec_falha_key_not_config: Swift.String
+  public var brscan_facetec_falha_iniciar_sessao: Swift.String
+  public var brscan_facetec_falha_session_token: Swift.String
+  public var brscan_facetec_falha_ref_id_not_provided: Swift.String
+  public var brscan_facetec_falha_selfie_does_not_match: Swift.String
+  public var brscan_facetec_falha_iniciar_componente_facetec: Swift.String
+  public var brscan_selfie_capture_instruction_title: Swift.String
+  public var brscan_selfie_capture_instruction_illustration_one: Swift.String
+  public var brscan_selfie_capture_instruction_illustration_two: Swift.String
+  public var brscan_selfie_capture_instruction_illustration_three: Swift.String
+  public var brscan_selfie_capture_instruction_illustration_four: Swift.String
+  public var brscan_selfie_capture_instruction_positive_button_text: Swift.String
+  public var brscan_selfie_success_title: Swift.String
+  public var brscan_selfie_success_positive_button_text: Swift.String
+  public var brscan_selfie_exit_confirmation_title: Swift.String
+  public var brscan_selfie_exit_confirmation_subtitle: Swift.String
+  public var brscan_selfie_exit_confirmation_button_positive: Swift.String
+  public var brscan_selfie_exit_confirmation_button_negative: Swift.String
+  public var brscan_selfie_erro_baixa_luminosidade: Swift.String
+  public var brscan_selfie_error_connection_title: Swift.String
+  public var brscan_selfie_title_error_low_light: Swift.String
+  public var brscan_selfie_error_enable_camera_title: Swift.String
+  public var brscan_selfie_error_connection_failed_title: Swift.String
+  public var brscan_selfie_error_proccess_not_completed_title: Swift.String
+  public var brscan_selfie_error_token_expired_title: Swift.String
+  public var FaceTec_instructions_header_ready_1: Swift.String
+  public var FaceTec_instructions_header_ready_2: Swift.String
+  public var FaceTec_accessibility_cancel_button: Swift.String
+  public var FaceTec_feedback_center_face: Swift.String
+  public var FaceTec_feedback_face_not_found: Swift.String
+  public var FaceTec_feedback_move_phone_away: Swift.String
+  public var FaceTec_feedback_move_phone_closer: Swift.String
+  public var FaceTec_feedback_move_phone_to_eye_level: Swift.String
+  public var FaceTec_feedback_face_not_looking_straight_ahead: Swift.String
+  public var FaceTec_feedback_face_not_upright: Swift.String
+  public var FaceTec_feedback_hold_steady: Swift.String
+  public var FaceTec_feedback_use_even_lighting: Swift.String
+  public var FaceTec_instructions_message_ready_1: Swift.String
+  public var FaceTec_instructions_message_ready_2: Swift.String
+  public var FaceTec_action_im_ready: Swift.String
+  public var FaceTec_presession_frame_your_face: Swift.String
+  public var FaceTec_presession_hold_steady_3: Swift.String
+  public var FaceTec_presession_hold_steady_2: Swift.String
+  public var FaceTec_presession_hold_steady_1: Swift.String
+  public var FaceTec_idscan_capture_hold_steady_message: Swift.String
+  public var FaceTec_presession_position_face_straight_in_oval: Swift.String
+  public var FaceTec_presession_remove_dark_glasses: Swift.String
+  public var FaceTec_presession_neutral_expression: Swift.String
+  public var FaceTec_presession_conditions_too_bright: Swift.String
+  public var FaceTec_presession_brighten_your_environment: Swift.String
+  public var FaceTec_result_facescan_upload_message: Swift.String
+  public var FaceTec_result_idscan_upload_message: Swift.String
+  public var FaceTec_retry_header: Swift.String
+  public var FaceTec_retry_subheader_message: Swift.String
+  public var FaceTec_retry_your_image_label: Swift.String
+  public var FaceTec_retry_ideal_image_label: Swift.String
+  public var FaceTec_retry_instruction_message_1: Swift.String
+  public var FaceTec_retry_instruction_message_2: Swift.String
+  public var FaceTec_retry_instruction_message_3: Swift.String
+  public var FaceTec_action_try_again: Swift.String
+  public var FaceTec_camera_permission_header: Swift.String
+  public var FaceTec_action_ok: Swift.String
+  public var FaceTec_camera_permission_enable_camera: Swift.String
+  public var FaceTec_camera_permission_message_auth: Swift.String
+  public var FaceTec_camera_permission_message_enroll: Swift.String
+  public var FaceTec_initializing_camera: Swift.String
+  public var FaceTec_idscan_type_selection_header: Swift.String
+  public var FaceTec_action_take_photo: Swift.String
+  public var FaceTec_action_accept_photo: Swift.String
+  public var FaceTec_action_retake_photo: Swift.String
+  public var FaceTec_result_idscan_unsuccess_message: Swift.String
+  public var FaceTec_result_success_message: Swift.String
+  public var FaceTec_accessibility_torch_button: Swift.String
+  public var FaceTec_accessibility_tap_guidance: Swift.String
+  public var FaceTec_accessibility_feedback_move_phone_away: Swift.String
+  public var FaceTec_accessibility_feedback_move_phone_closer: Swift.String
+  public var FaceTec_accessibility_feedback_face_too_far_left: Swift.String
+  public var FaceTec_accessibility_feedback_face_too_far_right: Swift.String
+  public var FaceTec_accessibility_feedback_face_too_low: Swift.String
+  public var FaceTec_accessibility_feedback_face_too_high: Swift.String
+  public var FaceTec_accessibility_feedback_face_rotated_too_far_left: Swift.String
+  public var FaceTec_accessibility_feedback_face_rotated_too_far_right: Swift.String
+  public var FaceTec_accessibility_feedback_face_pointing_too_far_left: Swift.String
+  public var FaceTec_accessibility_feedback_face_pointing_too_far_right: Swift.String
+  public var FaceTec_accessibility_feedback_face_not_on_camera: Swift.String
+  public var FaceTec_accessibility_feedback_hold_device_to_eye_level: Swift.String
+  public var FaceTec_action_continue: Swift.String
+  public var FaceTec_action_confirm: Swift.String
+  public var FaceTec_action_scan_nfc: Swift.String
+  public var FaceTec_action_scan_nfc_card: Swift.String
+  public var FaceTec_action_skip_nfc: Swift.String
+  public var FaceTec_camera_permission_launch_settings: Swift.String
+  public var FaceTec_idscan_capture_tap_to_focus_message: Swift.String
+  public var FaceTec_idscan_capture_id_front_instruction_message: Swift.String
+  public var FaceTec_idscan_capture_id_back_instruction_message: Swift.String
+  public var FaceTec_idscan_review_id_front_instruction_message: Swift.String
+  public var FaceTec_idscan_review_id_back_instruction_message: Swift.String
+  public var FaceTec_idscan_ocr_confirmation_main_header: Swift.String
+  public var FaceTec_idscan_ocr_confirmation_scroll_message: Swift.String
+  public var FaceTec_idscan_nfc_status_disabled_message: Swift.String
+  public var FaceTec_idscan_nfc_status_ready_message: Swift.String
+  public var FaceTec_idscan_nfc_card_status_ready_message: Swift.String
+  public var FaceTec_idscan_nfc_status_starting_message: Swift.String
+  public var FaceTec_idscan_nfc_card_status_starting_message: Swift.String
+  public var FaceTec_idscan_nfc_status_scanning_message: Swift.String
+  public var FaceTec_idscan_nfc_status_weak_connection_message: Swift.String
+  public var FaceTec_idscan_nfc_status_finished_with_success_message: Swift.String
+  public var FaceTec_idscan_nfc_status_finished_with_error_message: Swift.String
+  public var FaceTec_idscan_nfc_card_status_finished_with_error_message: Swift.String
+  public var FaceTec_idscan_nfc_status_skipped_message: Swift.String
+  public var FaceTec_idscan_additional_review_message: Swift.String
+  public var FaceTec_result_nfc_upload_message: Swift.String
+  public var FaceTec_result_idscan_success_front_side_message: Swift.String
+  public var FaceTec_result_idscan_success_front_side_back_next_message: Swift.String
+  public var FaceTec_result_idscan_success_front_side_nfc_next_message: Swift.String
+  public var FaceTec_result_idscan_success_back_side_message: Swift.String
+  public var FaceTec_result_idscan_success_back_side_nfc_next_message: Swift.String
+  public var FaceTec_result_idscan_success_passport_message: Swift.String
+  public var FaceTec_result_idscan_success_passport_nfc_next_message: Swift.String
+  public var FaceTec_result_idscan_success_user_confirmation_message: Swift.String
+  public var FaceTec_result_idscan_success_nfc_message: Swift.String
+  public var FaceTec_result_idscan_success_additional_review_message: Swift.String
+  public var FaceTec_result_idscan_skip_or_error_nfc_message: Swift.String
+  public var FaceTec_result_idscan_retry_face_did_not_match_message: Swift.String
+  public var FaceTec_result_idscan_retry_id_not_fully_visible_message: Swift.String
+  public var FaceTec_result_idscan_retry_ocr_results_not_good_enough_message: Swift.String
+  public var FaceTec_result_idscan_retry_id_type_not_supported_message: Swift.String
+  public var FaceTec_result_idscan_retry_barcode_not_read_message: Swift.String
+  @objc override dynamic public init()
+  @objc public init(brscan_selfie_error_connection_subtitle: Swift.String = "", brscan_selfie_erro_ao_validar_chave: Swift.String = "", brscan_selfie_erro_baixa_luminosidade: Swift.String = "", brscan_selfie_erro_device_rooted: Swift.String = "", brscan_selfie_erro_usuario_cancelou_acao: Swift.String = "", brscan_selfie_erro_liberar_camera: Swift.String = "", brscan_selfie_error_connection_failed_subtitle: Swift.String = "", brscan_selfie_error_proccess_not_completed_subtitle: Swift.String = "", brscan_selfie_error_token_expired_subtitle: Swift.String = "", brscan_selfie_erro_acesso_negado_title: Swift.String = "", brscan_selfie_error_enable_camera_subtitle: Swift.String = "", brscan_selfie_erro_acesso_negado_botao_de_acao: Swift.String = "", brscan_selfie_erro_captura_title: Swift.String = "", brscan_selfie_erro_captura_subtitle: Swift.String = "", brscan_selfie_error_button_try_again: Swift.String = "", brscan_selfie_erro_captura_botao_sair_do_processo: Swift.String = "", brscan_selfie_erro_device_emulated: Swift.String = "", brscan_selfie_erro_tentativas_permitidas: Swift.String = "", brscan_facetec_falha_key_not_config: Swift.String = "", brscan_facetec_falha_iniciar_sessao: Swift.String = "", brscan_facetec_falha_session_token: Swift.String = "", brscan_facetec_falha_ref_id_not_provided: Swift.String = "", brscan_facetec_falha_selfie_does_not_match: Swift.String = "", brscan_facetec_falha_iniciar_componente_facetec: Swift.String = "", brscan_selfie_capture_instruction_title: Swift.String = "", brscan_selfie_capture_instruction_illustration_one: Swift.String = "", brscan_selfie_capture_instruction_illustration_two: Swift.String = "", brscan_selfie_capture_instruction_illustration_three: Swift.String = "", brscan_selfie_capture_instruction_illustration_four: Swift.String = "", brscan_selfie_capture_instruction_positive_button_text: Swift.String = "", brscan_selfie_success_title: Swift.String = "", brscan_selfie_success_positive_button_text: Swift.String = "", brscan_selfie_exit_confirmation_title: Swift.String = "", brscan_selfie_exit_confirmation_subtitle: Swift.String = "", brscan_selfie_exit_confirmation_button_positive: Swift.String = "", brscan_selfie_exit_confirmation_button_negative: Swift.String = "", brscan_selfie_error_connection_title: Swift.String = "", brscan_selfie_title_error_low_light: Swift.String = "", brscan_selfie_error_enable_camera_title: Swift.String = "", brscan_selfie_error_connection_failed_title: Swift.String = "", brscan_selfie_error_proccess_not_completed_title: Swift.String = "", brscan_selfie_error_token_expired_title: Swift.String = "", FaceTec_instructions_header_ready_1: Swift.String = "", FaceTec_instructions_header_ready_2: Swift.String = "", FaceTec_accessibility_cancel_button: Swift.String = "", FaceTec_feedback_center_face: Swift.String = "", FaceTec_feedback_face_not_found: Swift.String = "", FaceTec_feedback_move_phone_away: Swift.String = "", FaceTec_feedback_move_phone_closer: Swift.String = "", FaceTec_feedback_move_phone_to_eye_level: Swift.String = "", FaceTec_feedback_face_not_looking_straight_ahead: Swift.String = "", FaceTec_feedback_face_not_upright: Swift.String = "", FaceTec_feedback_hold_steady: Swift.String = "", FaceTec_feedback_use_even_lighting: Swift.String = "", FaceTec_instructions_message_ready_1: Swift.String = "", FaceTec_instructions_message_ready_2: Swift.String = "", FaceTec_action_im_ready: Swift.String = "", FaceTec_presession_frame_your_face: Swift.String = "", FaceTec_presession_hold_steady_3: Swift.String = "", FaceTec_presession_hold_steady_2: Swift.String = "", FaceTec_presession_hold_steady_1: Swift.String = "", FaceTec_idscan_capture_hold_steady_message: Swift.String = "", FaceTec_presession_position_face_straight_in_oval: Swift.String = "", FaceTec_presession_remove_dark_glasses: Swift.String = "", FaceTec_presession_neutral_expression: Swift.String = "", FaceTec_presession_conditions_too_bright: Swift.String = "", FaceTec_presession_brighten_your_environment: Swift.String = "", FaceTec_result_facescan_upload_message: Swift.String = "", FaceTec_result_idscan_upload_message: Swift.String = "", FaceTec_retry_header: Swift.String = "", FaceTec_retry_subheader_message: Swift.String = "", FaceTec_retry_your_image_label: Swift.String = "", FaceTec_retry_ideal_image_label: Swift.String = "", FaceTec_retry_instruction_message_1: Swift.String = "", FaceTec_retry_instruction_message_2: Swift.String = "", FaceTec_retry_instruction_message_3: Swift.String = "", FaceTec_action_try_again: Swift.String = "", FaceTec_camera_permission_header: Swift.String = "", FaceTec_action_ok: Swift.String = "", FaceTec_camera_permission_enable_camera: Swift.String = "", FaceTec_camera_permission_message_auth: Swift.String = "", FaceTec_camera_permission_message_enroll: Swift.String = "", FaceTec_initializing_camera: Swift.String = "", FaceTec_idscan_type_selection_header: Swift.String = "", FaceTec_action_take_photo: Swift.String = "", FaceTec_action_accept_photo: Swift.String = "", FaceTec_action_retake_photo: Swift.String = "", FaceTec_result_idscan_unsuccess_message: Swift.String = "", FaceTec_result_success_message: Swift.String = "", FaceTec_accessibility_torch_button: Swift.String = "", FaceTec_accessibility_tap_guidance: Swift.String = "", FaceTec_accessibility_feedback_move_phone_away: Swift.String = "", FaceTec_accessibility_feedback_move_phone_closer: Swift.String = "", FaceTec_accessibility_feedback_face_too_far_left: Swift.String = "", FaceTec_accessibility_feedback_face_too_far_right: Swift.String = "", FaceTec_accessibility_feedback_face_too_low: Swift.String = "", FaceTec_accessibility_feedback_face_too_high: Swift.String = "", FaceTec_accessibility_feedback_face_rotated_too_far_left: Swift.String = "", FaceTec_accessibility_feedback_face_rotated_too_far_right: Swift.String = "", FaceTec_accessibility_feedback_face_pointing_too_far_left: Swift.String = "", FaceTec_accessibility_feedback_face_pointing_too_far_right: Swift.String = "", FaceTec_accessibility_feedback_face_not_on_camera: Swift.String = "", FaceTec_accessibility_feedback_hold_device_to_eye_level: Swift.String = "", FaceTec_action_continue: Swift.String = "", FaceTec_action_confirm: Swift.String = "", FaceTec_action_scan_nfc: Swift.String = "", FaceTec_action_scan_nfc_card: Swift.String = "", FaceTec_action_skip_nfc: Swift.String = "", FaceTec_camera_permission_launch_settings: Swift.String = "", FaceTec_idscan_capture_tap_to_focus_message: Swift.String = "", FaceTec_idscan_capture_id_front_instruction_message: Swift.String = "", FaceTec_idscan_capture_id_back_instruction_message: Swift.String = "", FaceTec_idscan_review_id_front_instruction_message: Swift.String = "", FaceTec_idscan_review_id_back_instruction_message: Swift.String = "", FaceTec_idscan_ocr_confirmation_main_header: Swift.String = "", FaceTec_idscan_ocr_confirmation_scroll_message: Swift.String = "", FaceTec_idscan_nfc_status_disabled_message: Swift.String = "", FaceTec_idscan_nfc_status_ready_message: Swift.String = "", FaceTec_idscan_nfc_card_status_ready_message: Swift.String = "", FaceTec_idscan_nfc_status_starting_message: Swift.String = "", FaceTec_idscan_nfc_card_status_starting_message: Swift.String = "", FaceTec_idscan_nfc_status_scanning_message: Swift.String = "", FaceTec_idscan_nfc_status_weak_connection_message: Swift.String = "", FaceTec_idscan_nfc_status_finished_with_success_message: Swift.String = "", FaceTec_idscan_nfc_status_finished_with_error_message: Swift.String = "", FaceTec_idscan_nfc_card_status_finished_with_error_message: Swift.String = "", FaceTec_idscan_nfc_status_skipped_message: Swift.String = "", FaceTec_idscan_additional_review_message: Swift.String = "", FaceTec_result_nfc_upload_message: Swift.String = "", FaceTec_result_idscan_success_front_side_message: Swift.String = "", FaceTec_result_idscan_success_front_side_back_next_message: Swift.String = "", FaceTec_result_idscan_success_front_side_nfc_next_message: Swift.String = "", FaceTec_result_idscan_success_back_side_message: Swift.String = "", FaceTec_result_idscan_success_back_side_nfc_next_message: Swift.String = "", FaceTec_result_idscan_success_passport_message: Swift.String = "", FaceTec_result_idscan_success_passport_nfc_next_message: Swift.String = "", FaceTec_result_idscan_success_user_confirmation_message: Swift.String = "", FaceTec_result_idscan_success_nfc_message: Swift.String = "", FaceTec_result_idscan_success_additional_review_message: Swift.String = "", FaceTec_result_idscan_skip_or_error_nfc_message: Swift.String = "", FaceTec_result_idscan_retry_face_did_not_match_message: Swift.String = "", FaceTec_result_idscan_retry_id_not_fully_visible_message: Swift.String = "", FaceTec_result_idscan_retry_ocr_results_not_good_enough_message: Swift.String = "", FaceTec_result_idscan_retry_id_type_not_supported_message: Swift.String = "", FaceTec_result_idscan_retry_barcode_not_read_message: Swift.String = "", brscan_selfie_loading_title: Swift.String = "", brscan_selfie_loading_subtitle_before_capture: Swift.String = "", brscan_selfie_loading_subtitle_after_capture: Swift.String = "")
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public enum Device {
   case iPodTouch5
@@ -470,22 +562,28 @@ extension serasa_idf_liveness3d_ios.Device {
     get
   }
 }
-extension UIKit.UIFont {
-  public static let loadFonts: ()
+public struct Erro : Swift.Codable {
+  public var codigo: Swift.Int
+  public var descricao: Swift.String
+  public var title: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
-extension UIKit.UIFont {
-  public var ligth: Swift.String {
-    get
-  }
-  public var medium: Swift.String {
-    get
-  }
-  public var regular: Swift.String {
-    get
-  }
-  public var bold: Swift.String {
-    get
-  }
+@_hasMissingDesignatedInitializers public class InternetConnectionManager {
+  public static func isConnectedToNetwork() -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ReadableMapSelfieConfiguracaoTexto {
+  public static let shared: serasa_idf_liveness3d_ios.ReadableMapSelfieConfiguracaoTexto
+  public func mapSelfieConfiguracaoTexto(customizacaoTexto: Foundation.NSDictionary) -> serasa_idf_liveness3d_ios.ConfiguracaoTextoSelfie
+  @objc deinit
+}
+public struct Selfie : Swift.Codable {
+  public var selfie: Swift.String
+  public var sessionId: Swift.String
+  public var faceScan: Foundation.Data?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension Swift.String {
   public var brscan_selfie_error_connection_subtitle: Swift.String {
@@ -933,220 +1031,101 @@ extension Swift.String {
     get
   }
 }
-public struct Erro : Swift.Codable {
-  public var codigo: Swift.Int
-  public var descricao: Swift.String
-  public var title: Swift.String?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
 extension UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func point(inside point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> Swift.Bool
 }
-@_inheritsConvenienceInitializers @objc public class ConfiguracaoTextoSelfie : ObjectiveC.NSObject, Swift.Codable {
-  public var brscan_selfie_error_connection_subtitle: Swift.String
-  public var brscan_selfie_erro_ao_validar_chave: Swift.String
-  public var brscan_selfie_erro_device_rooted: Swift.String
-  public var brscan_selfie_erro_usuario_cancelou_acao: Swift.String
-  public var brscan_selfie_erro_liberar_camera: Swift.String
-  public var brscan_selfie_error_connection_failed_subtitle: Swift.String
-  public var brscan_selfie_error_proccess_not_completed_subtitle: Swift.String
-  public var brscan_selfie_error_token_expired_subtitle: Swift.String
-  public var brscan_selfie_erro_acesso_negado_title: Swift.String
-  public var brscan_selfie_error_enable_camera_subtitle: Swift.String
-  public var brscan_selfie_erro_acesso_negado_botao_de_acao: Swift.String
-  public var brscan_selfie_erro_captura_title: Swift.String
-  public var brscan_selfie_erro_captura_subtitle: Swift.String
-  public var brscan_selfie_error_button_try_again: Swift.String
-  public var brscan_selfie_erro_captura_botao_sair_do_processo: Swift.String
-  public var brscan_selfie_loading_title: Swift.String
-  public var brscan_selfie_loading_subtitle_before_capture: Swift.String
-  public var brscan_selfie_loading_subtitle_after_capture: Swift.String
-  public var brscan_selfie_erro_device_emulated: Swift.String
-  public var brscan_selfie_erro_tentativas_permitidas: Swift.String
-  public var brscan_facetec_falha_key_not_config: Swift.String
-  public var brscan_facetec_falha_iniciar_sessao: Swift.String
-  public var brscan_facetec_falha_session_token: Swift.String
-  public var brscan_facetec_falha_ref_id_not_provided: Swift.String
-  public var brscan_facetec_falha_selfie_does_not_match: Swift.String
-  public var brscan_facetec_falha_iniciar_componente_facetec: Swift.String
-  public var brscan_selfie_capture_instruction_title: Swift.String
-  public var brscan_selfie_capture_instruction_illustration_one: Swift.String
-  public var brscan_selfie_capture_instruction_illustration_two: Swift.String
-  public var brscan_selfie_capture_instruction_illustration_three: Swift.String
-  public var brscan_selfie_capture_instruction_illustration_four: Swift.String
-  public var brscan_selfie_capture_instruction_positive_button_text: Swift.String
-  public var brscan_selfie_success_title: Swift.String
-  public var brscan_selfie_success_positive_button_text: Swift.String
-  public var brscan_selfie_exit_confirmation_title: Swift.String
-  public var brscan_selfie_exit_confirmation_subtitle: Swift.String
-  public var brscan_selfie_exit_confirmation_button_positive: Swift.String
-  public var brscan_selfie_exit_confirmation_button_negative: Swift.String
-  public var brscan_selfie_erro_baixa_luminosidade: Swift.String
-  public var brscan_selfie_error_connection_title: Swift.String
-  public var brscan_selfie_title_error_low_light: Swift.String
-  public var brscan_selfie_error_enable_camera_title: Swift.String
-  public var brscan_selfie_error_connection_failed_title: Swift.String
-  public var brscan_selfie_error_proccess_not_completed_title: Swift.String
-  public var brscan_selfie_error_token_expired_title: Swift.String
-  public var FaceTec_instructions_header_ready_1: Swift.String
-  public var FaceTec_instructions_header_ready_2: Swift.String
-  public var FaceTec_accessibility_cancel_button: Swift.String
-  public var FaceTec_feedback_center_face: Swift.String
-  public var FaceTec_feedback_face_not_found: Swift.String
-  public var FaceTec_feedback_move_phone_away: Swift.String
-  public var FaceTec_feedback_move_phone_closer: Swift.String
-  public var FaceTec_feedback_move_phone_to_eye_level: Swift.String
-  public var FaceTec_feedback_face_not_looking_straight_ahead: Swift.String
-  public var FaceTec_feedback_face_not_upright: Swift.String
-  public var FaceTec_feedback_hold_steady: Swift.String
-  public var FaceTec_feedback_use_even_lighting: Swift.String
-  public var FaceTec_instructions_message_ready_1: Swift.String
-  public var FaceTec_instructions_message_ready_2: Swift.String
-  public var FaceTec_action_im_ready: Swift.String
-  public var FaceTec_presession_frame_your_face: Swift.String
-  public var FaceTec_presession_hold_steady_3: Swift.String
-  public var FaceTec_presession_hold_steady_2: Swift.String
-  public var FaceTec_presession_hold_steady_1: Swift.String
-  public var FaceTec_idscan_capture_hold_steady_message: Swift.String
-  public var FaceTec_presession_position_face_straight_in_oval: Swift.String
-  public var FaceTec_presession_remove_dark_glasses: Swift.String
-  public var FaceTec_presession_neutral_expression: Swift.String
-  public var FaceTec_presession_conditions_too_bright: Swift.String
-  public var FaceTec_presession_brighten_your_environment: Swift.String
-  public var FaceTec_result_facescan_upload_message: Swift.String
-  public var FaceTec_result_idscan_upload_message: Swift.String
-  public var FaceTec_retry_header: Swift.String
-  public var FaceTec_retry_subheader_message: Swift.String
-  public var FaceTec_retry_your_image_label: Swift.String
-  public var FaceTec_retry_ideal_image_label: Swift.String
-  public var FaceTec_retry_instruction_message_1: Swift.String
-  public var FaceTec_retry_instruction_message_2: Swift.String
-  public var FaceTec_retry_instruction_message_3: Swift.String
-  public var FaceTec_action_try_again: Swift.String
-  public var FaceTec_camera_permission_header: Swift.String
-  public var FaceTec_action_ok: Swift.String
-  public var FaceTec_camera_permission_enable_camera: Swift.String
-  public var FaceTec_camera_permission_message_auth: Swift.String
-  public var FaceTec_camera_permission_message_enroll: Swift.String
-  public var FaceTec_initializing_camera: Swift.String
-  public var FaceTec_idscan_type_selection_header: Swift.String
-  public var FaceTec_action_take_photo: Swift.String
-  public var FaceTec_action_accept_photo: Swift.String
-  public var FaceTec_action_retake_photo: Swift.String
-  public var FaceTec_result_idscan_unsuccess_message: Swift.String
-  public var FaceTec_result_success_message: Swift.String
-  public var FaceTec_accessibility_torch_button: Swift.String
-  public var FaceTec_accessibility_tap_guidance: Swift.String
-  public var FaceTec_accessibility_feedback_move_phone_away: Swift.String
-  public var FaceTec_accessibility_feedback_move_phone_closer: Swift.String
-  public var FaceTec_accessibility_feedback_face_too_far_left: Swift.String
-  public var FaceTec_accessibility_feedback_face_too_far_right: Swift.String
-  public var FaceTec_accessibility_feedback_face_too_low: Swift.String
-  public var FaceTec_accessibility_feedback_face_too_high: Swift.String
-  public var FaceTec_accessibility_feedback_face_rotated_too_far_left: Swift.String
-  public var FaceTec_accessibility_feedback_face_rotated_too_far_right: Swift.String
-  public var FaceTec_accessibility_feedback_face_pointing_too_far_left: Swift.String
-  public var FaceTec_accessibility_feedback_face_pointing_too_far_right: Swift.String
-  public var FaceTec_accessibility_feedback_face_not_on_camera: Swift.String
-  public var FaceTec_accessibility_feedback_hold_device_to_eye_level: Swift.String
-  public var FaceTec_action_continue: Swift.String
-  public var FaceTec_action_confirm: Swift.String
-  public var FaceTec_action_scan_nfc: Swift.String
-  public var FaceTec_action_scan_nfc_card: Swift.String
-  public var FaceTec_action_skip_nfc: Swift.String
-  public var FaceTec_camera_permission_launch_settings: Swift.String
-  public var FaceTec_idscan_capture_tap_to_focus_message: Swift.String
-  public var FaceTec_idscan_capture_id_front_instruction_message: Swift.String
-  public var FaceTec_idscan_capture_id_back_instruction_message: Swift.String
-  public var FaceTec_idscan_review_id_front_instruction_message: Swift.String
-  public var FaceTec_idscan_review_id_back_instruction_message: Swift.String
-  public var FaceTec_idscan_ocr_confirmation_main_header: Swift.String
-  public var FaceTec_idscan_ocr_confirmation_scroll_message: Swift.String
-  public var FaceTec_idscan_nfc_status_disabled_message: Swift.String
-  public var FaceTec_idscan_nfc_status_ready_message: Swift.String
-  public var FaceTec_idscan_nfc_card_status_ready_message: Swift.String
-  public var FaceTec_idscan_nfc_status_starting_message: Swift.String
-  public var FaceTec_idscan_nfc_card_status_starting_message: Swift.String
-  public var FaceTec_idscan_nfc_status_scanning_message: Swift.String
-  public var FaceTec_idscan_nfc_status_weak_connection_message: Swift.String
-  public var FaceTec_idscan_nfc_status_finished_with_success_message: Swift.String
-  public var FaceTec_idscan_nfc_status_finished_with_error_message: Swift.String
-  public var FaceTec_idscan_nfc_card_status_finished_with_error_message: Swift.String
-  public var FaceTec_idscan_nfc_status_skipped_message: Swift.String
-  public var FaceTec_idscan_additional_review_message: Swift.String
-  public var FaceTec_result_nfc_upload_message: Swift.String
-  public var FaceTec_result_idscan_success_front_side_message: Swift.String
-  public var FaceTec_result_idscan_success_front_side_back_next_message: Swift.String
-  public var FaceTec_result_idscan_success_front_side_nfc_next_message: Swift.String
-  public var FaceTec_result_idscan_success_back_side_message: Swift.String
-  public var FaceTec_result_idscan_success_back_side_nfc_next_message: Swift.String
-  public var FaceTec_result_idscan_success_passport_message: Swift.String
-  public var FaceTec_result_idscan_success_passport_nfc_next_message: Swift.String
-  public var FaceTec_result_idscan_success_user_confirmation_message: Swift.String
-  public var FaceTec_result_idscan_success_nfc_message: Swift.String
-  public var FaceTec_result_idscan_success_additional_review_message: Swift.String
-  public var FaceTec_result_idscan_skip_or_error_nfc_message: Swift.String
-  public var FaceTec_result_idscan_retry_face_did_not_match_message: Swift.String
-  public var FaceTec_result_idscan_retry_id_not_fully_visible_message: Swift.String
-  public var FaceTec_result_idscan_retry_ocr_results_not_good_enough_message: Swift.String
-  public var FaceTec_result_idscan_retry_id_type_not_supported_message: Swift.String
-  public var FaceTec_result_idscan_retry_barcode_not_read_message: Swift.String
-  @objc override dynamic public init()
-  @objc public init(brscan_selfie_error_connection_subtitle: Swift.String = "", brscan_selfie_erro_ao_validar_chave: Swift.String = "", brscan_selfie_erro_baixa_luminosidade: Swift.String = "", brscan_selfie_erro_device_rooted: Swift.String = "", brscan_selfie_erro_usuario_cancelou_acao: Swift.String = "", brscan_selfie_erro_liberar_camera: Swift.String = "", brscan_selfie_error_connection_failed_subtitle: Swift.String = "", brscan_selfie_error_proccess_not_completed_subtitle: Swift.String = "", brscan_selfie_error_token_expired_subtitle: Swift.String = "", brscan_selfie_erro_acesso_negado_title: Swift.String = "", brscan_selfie_error_enable_camera_subtitle: Swift.String = "", brscan_selfie_erro_acesso_negado_botao_de_acao: Swift.String = "", brscan_selfie_erro_captura_title: Swift.String = "", brscan_selfie_erro_captura_subtitle: Swift.String = "", brscan_selfie_error_button_try_again: Swift.String = "", brscan_selfie_erro_captura_botao_sair_do_processo: Swift.String = "", brscan_selfie_erro_device_emulated: Swift.String = "", brscan_selfie_erro_tentativas_permitidas: Swift.String = "", brscan_facetec_falha_key_not_config: Swift.String = "", brscan_facetec_falha_iniciar_sessao: Swift.String = "", brscan_facetec_falha_session_token: Swift.String = "", brscan_facetec_falha_ref_id_not_provided: Swift.String = "", brscan_facetec_falha_selfie_does_not_match: Swift.String = "", brscan_facetec_falha_iniciar_componente_facetec: Swift.String = "", brscan_selfie_capture_instruction_title: Swift.String = "", brscan_selfie_capture_instruction_illustration_one: Swift.String = "", brscan_selfie_capture_instruction_illustration_two: Swift.String = "", brscan_selfie_capture_instruction_illustration_three: Swift.String = "", brscan_selfie_capture_instruction_illustration_four: Swift.String = "", brscan_selfie_capture_instruction_positive_button_text: Swift.String = "", brscan_selfie_success_title: Swift.String = "", brscan_selfie_success_positive_button_text: Swift.String = "", brscan_selfie_exit_confirmation_title: Swift.String = "", brscan_selfie_exit_confirmation_subtitle: Swift.String = "", brscan_selfie_exit_confirmation_button_positive: Swift.String = "", brscan_selfie_exit_confirmation_button_negative: Swift.String = "", brscan_selfie_error_connection_title: Swift.String = "", brscan_selfie_title_error_low_light: Swift.String = "", brscan_selfie_error_enable_camera_title: Swift.String = "", brscan_selfie_error_connection_failed_title: Swift.String = "", brscan_selfie_error_proccess_not_completed_title: Swift.String = "", brscan_selfie_error_token_expired_title: Swift.String = "", FaceTec_instructions_header_ready_1: Swift.String = "", FaceTec_instructions_header_ready_2: Swift.String = "", FaceTec_accessibility_cancel_button: Swift.String = "", FaceTec_feedback_center_face: Swift.String = "", FaceTec_feedback_face_not_found: Swift.String = "", FaceTec_feedback_move_phone_away: Swift.String = "", FaceTec_feedback_move_phone_closer: Swift.String = "", FaceTec_feedback_move_phone_to_eye_level: Swift.String = "", FaceTec_feedback_face_not_looking_straight_ahead: Swift.String = "", FaceTec_feedback_face_not_upright: Swift.String = "", FaceTec_feedback_hold_steady: Swift.String = "", FaceTec_feedback_use_even_lighting: Swift.String = "", FaceTec_instructions_message_ready_1: Swift.String = "", FaceTec_instructions_message_ready_2: Swift.String = "", FaceTec_action_im_ready: Swift.String = "", FaceTec_presession_frame_your_face: Swift.String = "", FaceTec_presession_hold_steady_3: Swift.String = "", FaceTec_presession_hold_steady_2: Swift.String = "", FaceTec_presession_hold_steady_1: Swift.String = "", FaceTec_idscan_capture_hold_steady_message: Swift.String = "", FaceTec_presession_position_face_straight_in_oval: Swift.String = "", FaceTec_presession_remove_dark_glasses: Swift.String = "", FaceTec_presession_neutral_expression: Swift.String = "", FaceTec_presession_conditions_too_bright: Swift.String = "", FaceTec_presession_brighten_your_environment: Swift.String = "", FaceTec_result_facescan_upload_message: Swift.String = "", FaceTec_result_idscan_upload_message: Swift.String = "", FaceTec_retry_header: Swift.String = "", FaceTec_retry_subheader_message: Swift.String = "", FaceTec_retry_your_image_label: Swift.String = "", FaceTec_retry_ideal_image_label: Swift.String = "", FaceTec_retry_instruction_message_1: Swift.String = "", FaceTec_retry_instruction_message_2: Swift.String = "", FaceTec_retry_instruction_message_3: Swift.String = "", FaceTec_action_try_again: Swift.String = "", FaceTec_camera_permission_header: Swift.String = "", FaceTec_action_ok: Swift.String = "", FaceTec_camera_permission_enable_camera: Swift.String = "", FaceTec_camera_permission_message_auth: Swift.String = "", FaceTec_camera_permission_message_enroll: Swift.String = "", FaceTec_initializing_camera: Swift.String = "", FaceTec_idscan_type_selection_header: Swift.String = "", FaceTec_action_take_photo: Swift.String = "", FaceTec_action_accept_photo: Swift.String = "", FaceTec_action_retake_photo: Swift.String = "", FaceTec_result_idscan_unsuccess_message: Swift.String = "", FaceTec_result_success_message: Swift.String = "", FaceTec_accessibility_torch_button: Swift.String = "", FaceTec_accessibility_tap_guidance: Swift.String = "", FaceTec_accessibility_feedback_move_phone_away: Swift.String = "", FaceTec_accessibility_feedback_move_phone_closer: Swift.String = "", FaceTec_accessibility_feedback_face_too_far_left: Swift.String = "", FaceTec_accessibility_feedback_face_too_far_right: Swift.String = "", FaceTec_accessibility_feedback_face_too_low: Swift.String = "", FaceTec_accessibility_feedback_face_too_high: Swift.String = "", FaceTec_accessibility_feedback_face_rotated_too_far_left: Swift.String = "", FaceTec_accessibility_feedback_face_rotated_too_far_right: Swift.String = "", FaceTec_accessibility_feedback_face_pointing_too_far_left: Swift.String = "", FaceTec_accessibility_feedback_face_pointing_too_far_right: Swift.String = "", FaceTec_accessibility_feedback_face_not_on_camera: Swift.String = "", FaceTec_accessibility_feedback_hold_device_to_eye_level: Swift.String = "", FaceTec_action_continue: Swift.String = "", FaceTec_action_confirm: Swift.String = "", FaceTec_action_scan_nfc: Swift.String = "", FaceTec_action_scan_nfc_card: Swift.String = "", FaceTec_action_skip_nfc: Swift.String = "", FaceTec_camera_permission_launch_settings: Swift.String = "", FaceTec_idscan_capture_tap_to_focus_message: Swift.String = "", FaceTec_idscan_capture_id_front_instruction_message: Swift.String = "", FaceTec_idscan_capture_id_back_instruction_message: Swift.String = "", FaceTec_idscan_review_id_front_instruction_message: Swift.String = "", FaceTec_idscan_review_id_back_instruction_message: Swift.String = "", FaceTec_idscan_ocr_confirmation_main_header: Swift.String = "", FaceTec_idscan_ocr_confirmation_scroll_message: Swift.String = "", FaceTec_idscan_nfc_status_disabled_message: Swift.String = "", FaceTec_idscan_nfc_status_ready_message: Swift.String = "", FaceTec_idscan_nfc_card_status_ready_message: Swift.String = "", FaceTec_idscan_nfc_status_starting_message: Swift.String = "", FaceTec_idscan_nfc_card_status_starting_message: Swift.String = "", FaceTec_idscan_nfc_status_scanning_message: Swift.String = "", FaceTec_idscan_nfc_status_weak_connection_message: Swift.String = "", FaceTec_idscan_nfc_status_finished_with_success_message: Swift.String = "", FaceTec_idscan_nfc_status_finished_with_error_message: Swift.String = "", FaceTec_idscan_nfc_card_status_finished_with_error_message: Swift.String = "", FaceTec_idscan_nfc_status_skipped_message: Swift.String = "", FaceTec_idscan_additional_review_message: Swift.String = "", FaceTec_result_nfc_upload_message: Swift.String = "", FaceTec_result_idscan_success_front_side_message: Swift.String = "", FaceTec_result_idscan_success_front_side_back_next_message: Swift.String = "", FaceTec_result_idscan_success_front_side_nfc_next_message: Swift.String = "", FaceTec_result_idscan_success_back_side_message: Swift.String = "", FaceTec_result_idscan_success_back_side_nfc_next_message: Swift.String = "", FaceTec_result_idscan_success_passport_message: Swift.String = "", FaceTec_result_idscan_success_passport_nfc_next_message: Swift.String = "", FaceTec_result_idscan_success_user_confirmation_message: Swift.String = "", FaceTec_result_idscan_success_nfc_message: Swift.String = "", FaceTec_result_idscan_success_additional_review_message: Swift.String = "", FaceTec_result_idscan_skip_or_error_nfc_message: Swift.String = "", FaceTec_result_idscan_retry_face_did_not_match_message: Swift.String = "", FaceTec_result_idscan_retry_id_not_fully_visible_message: Swift.String = "", FaceTec_result_idscan_retry_ocr_results_not_good_enough_message: Swift.String = "", FaceTec_result_idscan_retry_id_type_not_supported_message: Swift.String = "", FaceTec_result_idscan_retry_barcode_not_read_message: Swift.String = "", brscan_selfie_loading_title: Swift.String = "", brscan_selfie_loading_subtitle_before_capture: Swift.String = "", brscan_selfie_loading_subtitle_after_capture: Swift.String = "")
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-public struct Selfie : Swift.Codable {
-  public var selfie: Swift.String
-  public var sessionId: Swift.String
-  public var faceScan: Foundation.Data?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@_hasMissingDesignatedInitializers public class InternetConnectionManager {
-  public static func isConnectedToNetwork() -> Swift.Bool
-  @objc deinit
-}
-@objc public protocol CapturaSViewControllerDelegate {
-  @objc func sucessoDelegate(_ selfie: [Swift.String : Any])
-  @objc func erroDelegate(_ erro: [Swift.String : Any])
-  @objc func callbackProcessamentoFacetec(_ notificationFacetec: [Swift.String : Any])
-}
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CapturaSViewController : UIKit.UIViewController {
-  @objc @_Concurrency.MainActor(unsafe) public var delegate: (any serasa_idf_liveness3d_ios.CapturaSViewControllerDelegate)?
-  @objc @_Concurrency.MainActor(unsafe) required public init(chave: Swift.String, wizard: Swift.Bool, segurancaExtraRootCheck: Swift.Bool = false, segurancaExtraEmulatorCheck: Swift.Bool = false, tentativasDeCaptura: Swift.Int = 0, telaConfirmacaoDeSaida: Swift.Bool = true, utilizarCameraTraseira: Swift.Bool = false, retornarErros: Swift.Bool = false, telaSucesso: Swift.Bool = true, processType: Swift.String = "liveness", externalDatabaseRefID: Swift.String = "", segurancaExtraSslPinning: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @objc deinit
-}
-extension serasa_idf_liveness3d_ios.CapturaSViewController : serasa_idf_liveness3d_ios.CapturarSelfieViewControllerDelegate {
-  @_Concurrency.MainActor(unsafe) public func sucesso(_ selfie: serasa_idf_liveness3d_ios.Selfie)
-  @_Concurrency.MainActor(unsafe) public func erro(_ erro: serasa_idf_liveness3d_ios.Erro, _ id: Swift.String)
-}
-public protocol CapturarSelfieViewControllerDelegate {
-  func erro(_ erro: serasa_idf_liveness3d_ios.Erro, _ id: Swift.String)
-  func sucesso(_ selfie: serasa_idf_liveness3d_ios.Selfie)
-}
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CapturarSelfieViewController : UIKit.UIViewController, Foundation.URLSessionDelegate {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
-    @objc get
-  }
-  @_Concurrency.MainActor(unsafe) public var delegate: (any serasa_idf_liveness3d_ios.CapturarSelfieViewControllerDelegate)?
-  @_Concurrency.MainActor(unsafe) required public init(chave: Swift.String, wizard: Swift.Bool = false, segurancaExtraSslPinning: Swift.Bool, tipoRetorno: Swift.String = "base64", tokenTentativa: Swift.Int, retornarErros: Swift.Bool, tentativasDeCaptura: Swift.Int, telaConfirmacaoDeSaida: Swift.Bool, utilizarCameraTraseira: Swift.Bool, telaSucesso: Swift.Bool, processType: Swift.String, externalDatabaseRefID: Swift.String)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func increment()
-  @_Concurrency.MainActor(unsafe) public func attemptExceeded() -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public func sucessoLiveness(_ selfie: serasa_idf_liveness3d_ios.Selfie)
-  @objc deinit
-}
-extension serasa_idf_liveness3d_ios.CapturarSelfieViewController : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-}
-extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public var viewWidth: CoreFoundation.CGFloat {
+extension UIKit.UIColor {
+  public var primary: UIKit.UIColor {
     get
   }
-  @_Concurrency.MainActor(unsafe) public var viewHeight: CoreFoundation.CGFloat {
+  public var brscan_selfie_feedback_custom_text_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_primary_button_background_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_primary_button_text_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_progress_tint_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_result_custom_result_animation_foreground_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_result_custom_result_animation_background_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_feedback_custom_background_colors: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_oval_custom_stroke_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_loading_title_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_loading_subtitle_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_ready_screen_header_text_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_ready_screen_subtext_text_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_foreground_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_retry_screen_header_text_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_retry_screen_subtext_text_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_result_custom_foreground_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_btn_text_normal_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_btn_text_disabled_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_guidance_custom_btn_text_highlight_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_close_button_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_loading_progress_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_loading_background_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_capture_instruction_title_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_success_title_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_capture_instruction_text_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_success_check_icon_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_exit_confirmation_title_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_exit_confirmation_subtitle_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_error_title_color: UIKit.UIColor {
+    get
+  }
+  public var brscan_selfie_error_subtitle_color: UIKit.UIColor {
     get
   }
 }
@@ -1160,6 +1139,31 @@ public enum Model : Swift.String {
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public var type: serasa_idf_liveness3d_ios.Model {
+    get
+  }
+}
+extension UIKit.UIFont {
+  public static let loadFonts: ()
+}
+extension UIKit.UIFont {
+  public var ligth: Swift.String {
+    get
+  }
+  public var medium: Swift.String {
+    get
+  }
+  public var regular: Swift.String {
+    get
+  }
+  public var bold: Swift.String {
+    get
+  }
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var viewWidth: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var viewHeight: CoreFoundation.CGFloat {
     get
   }
 }
