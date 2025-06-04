@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HVQn8+EmLukKUfWuLYqdgEgbFR8=
+		fFZpBuYzaEMBFNIbgF2rL1lLhsM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		uNuOE4mz9lnmTR5dxaz9WgkPTDs=
+		snoBqGHDiH9kgZCO7QP/06jT72g=
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		fCJLl/cAnkSVU5ggNKqgxb+gTl8=
+		/i8giWUKpGWi058Pgc1V5l2RmGo=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -68,7 +68,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qa1hxo5oXPmCsss/Zkq4Wu3YtdgHOWHLNSmbNODShTU=
+			J78DmwVQCmscVtoTaVuuXNv/XOsuAZ1tyI2DVmkLiqM=
 			</data>
 		</dict>
 		<key>Modules/serasa_idf_liveness3d_ios.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -96,7 +96,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HPcZyz7f6DB2iK/GEKMTZd3gObKB8iVoRj13P6lNbgY=
+			QXnCZK2SJvRO5BduOOlSRU54Fmj+Dy5Nqk+7a4zi1OE=
 			</data>
 		</dict>
 	</dict>
