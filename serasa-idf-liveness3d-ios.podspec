@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|  
     s.name              = "serasa-idf-liveness3d-ios"
-    s.version           = "3.0.9"
+    s.version           = "3.0.10"
     s.summary           = "Soluções de biometria facial utilizando componente FaceTec"
     s.homepage          = "https://github.com/brscan/serasa-idf-liveness3d-ios"
 
     s.author            = { "Celso Junio" => "celsoj18@gmail.com"}
     s.license           = "MIT"
 
-    s.platform          = :ios, "11.0"
+    s.platform          = :ios, "12.0"
     s.source            = { :git => 'https://github.com/brscan/serasa-idf-liveness3d-ios.git', :tag => s.version.to_s }
 
     s.resource_bundles = {
