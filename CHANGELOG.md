@@ -1,4 +1,7 @@
-## [3.0.15] - 16/12/2025
+## [3.0.16] - 03/03/2026
+- Melhoria: Atualização da sdk FaceTec(9.7.104)
+
+## [3.0.15] - 15/12/2025
 - Melhoria: Adição de novas validações de segurança SSL Pinning.
 
 ## [3.0.14] - 08/12/2025
