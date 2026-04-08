@@ -1,0 +1,4 @@
+framework module serasa_idf_liveness3d_ios_dev {
+  header "serasa_idf_liveness3d_ios_dev-Swift.h"
+  requires objc
+}
